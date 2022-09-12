@@ -13,6 +13,7 @@ specifiers:
   eslint-plugin-n: ^15.0.0
   eslint-plugin-promise: ^6.0.0
   eslint-plugin-react: ^7.31.8
+  husky: ^8.0.1
   react: ^18.2.0
   react-dom: ^18.2.0
   typescript: '*'
@@ -35,6 +36,7 @@ devDependencies:
   eslint-plugin-n: 15.2.5_eslint@8.23.1
   eslint-plugin-promise: 6.0.1_eslint@8.23.1
   eslint-plugin-react: 7.31.8_eslint@8.23.1
+  husky: 8.0.1
   typescript: 4.8.3
   vite: 3.1.0
 
@@ -1626,6 +1628,12 @@ packages:
     engines: {node: '>= 0.4.0'}
     dependencies:
       function-bind: 1.1.1
+    dev: true
+
+  /husky/8.0.1:
+    resolution: {integrity: sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   /ignore/5.2.0:
