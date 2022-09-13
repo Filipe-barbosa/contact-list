@@ -6,7 +6,7 @@ import ContactList from './pages/ContactList'
 export default function Router () {
   return (
     <Layout>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route path="/contact/:id" element={<ContactDetails />} />
           <Route path="/" element={<ContactList />} />
