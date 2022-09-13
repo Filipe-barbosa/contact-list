@@ -1,9 +1,8 @@
 {
   "name": "contact-list",
   "private": true,
-  "version": "0.1.0",
-  "homepage": "https://Filipe-barbosa.github.io/contact-list",
-  "type": "module",
+  "version": "0.1.1",
+  "homepage": "https://filipe-barbosa.github.io/contact-list/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
