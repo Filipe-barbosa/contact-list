@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function ListContacts () {
   return (
@@ -6,7 +6,7 @@ export default function ListContacts () {
       <div>
         {Array.from({ length: 10 }).map((_, i) => (
           <p key={i}>
-            <a href={`/contact/${i}`}>item {i}</a>
+            <Link to={`/contact/${i}`}>item {i}</Link>
           </p>
         ))}
       </div>
