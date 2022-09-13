@@ -12,7 +12,8 @@
   "settings": {
     "react": {
       "version": "detect"
-    }
+    },
+    "import/extensions": [".js", ".jsx", ".ts", ".tsx"]
   },
   "overrides": [],
   "parserOptions": {
@@ -20,10 +21,12 @@
     "sourceType": "module",
     "project": ["./tsconfig.json"]
   },
-  "plugins": ["react"],
+  "plugins": ["react", "@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
   "rules": {
     "@typescript-eslint/explicit-function-return-type": "off",
     "react/react-in-jsx-scope": "off",
-    "@typescript-eslint/triple-slash-reference": "off"
+    "@typescript-eslint/triple-slash-reference": "off",
+    "indent": ["error", 2]
   }
 }

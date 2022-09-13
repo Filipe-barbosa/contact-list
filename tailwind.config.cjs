@@ -10,7 +10,8 @@ module.exports = {
         background: '#E5E5E5',
         backgroundButton: '#2CC3D5',
         colorTitle: '#56616E',
-        colorSubTitle: '#607B99'
+        colorSubTitle: '#607B99',
+        dividerColor: '#D2DFE6'
 
       }
     }

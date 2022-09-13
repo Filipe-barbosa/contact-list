@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "predeploy": "pnpm run build",
     "deploy": "gh-pages -d dist",
-    "lint": "eslint --fix src/** --ext .tsx,.ts",
+    "lint": "eslint --fix --no-ignore src/** --ext .tsx,.ts",
     "prepare": "husky install",
     "preview": "vite preview",
     "test": "jest --passWithNoTests --no-cache --runInBand",
