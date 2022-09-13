@@ -11,7 +11,7 @@ export default function Header () {
       <div className="flex justify-center gap-2 items-center">
         <input placeholder="Search" className="border rounded-lg p-2 w-80"/>
         <Button label='Order by name' click={() => { console.log('foi') }}/>
-        <Button label='Order by name' click={() => { console.log('vamos') }}/>
+        <Button label='Order by create' click={() => { console.log('vamos') }}/>
         <button>
           <MenuIcon/>
         </button>

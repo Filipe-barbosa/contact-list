@@ -1,13 +1,11 @@
-
-import mockData from '../mockData.json'
 import Card from '../Card'
+import { useBotApiContext } from '../../context/BotApiContext'
 
 function CardSection () {
-  const data = mockData
+  const { botList } = useBotApiContext()
   return (
     <div className="flex justify-center gap-4 items-center border-t ">
-
-      {data.map(({ name, type }
+      {botList.map(({ name, type }
       ) =>
         (
           <Card key={Math.random()} cardName={name} cardCargo={type}/>)
