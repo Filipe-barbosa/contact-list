@@ -1,7 +1,7 @@
 import { Route, BrowserRouter, Routes } from 'react-router-dom'
 import Layout from './Layout'
 import ContactDetails from './pages/ContactDetails'
-import ContactList from './pages/ContactList'
+import Contact from './pages/Contact'
 
 export default function Router () {
   return (
@@ -9,7 +9,7 @@ export default function Router () {
       <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route path="/contact/:id" element={<ContactDetails />} />
-          <Route path="/" element={<ContactList />} />
+          <Route path="/" element={<Contact />} />
         </Routes>
       </BrowserRouter>
     </Layout>
