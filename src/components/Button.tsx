@@ -1,6 +1,6 @@
 interface Props {
   label: string
-  click: () => void
+  click?: () => void
 }
 
 const Button = (props: Props) => {

@@ -21,13 +21,11 @@ const saveFavorites = (bots: Bot[]) => {
 
 const getStoredFavorites = (): Bot[] => {
   const savedData = localStorage.getItem(LS_FAVORITE_KEY)
-  console.log('first', savedData)
+
   if (savedData == null) return []
   try {
-    console.log('second', savedData)
     return JSON.parse(savedData) as Bot[]
   } catch (e) {
-    console.log('third')
     return []
   }
 }

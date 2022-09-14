@@ -7,7 +7,7 @@ export default function Header () {
   const { orderBotsBy, search } = useBotApiContext()
   return (
     <div className="flex items-baseline justify-between">
-      <div className="font-mono text-2xl font-extrabold text-colorTitle">
+      <div className="font-bold text-2xl  text-colorTitle">
             My chatbots
       </div>
       <div className="flex justify-center gap-2 items-center">

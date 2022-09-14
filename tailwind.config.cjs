@@ -11,7 +11,8 @@ module.exports = {
         backgroundButton: '#2CC3D5',
         colorTitle: '#56616E',
         colorSubTitle: '#607B99',
-        dividerColor: '#D2DFE6'
+        dividerColor: '#D2DFE6',
+        footerColor: '#738192'
 
       }
     }

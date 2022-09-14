@@ -1,7 +1,7 @@
 export interface Bot {
   name: string
   type: string
-  created: string
+  created: number
   isFavorite: boolean
 }
 
