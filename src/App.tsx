@@ -1,26 +1,12 @@
-import { ReactNode, FC } from 'react'
 import Router from './components/Router'
-import BotApiContextProvider, { ChildrenProps } from './context/BotApiContext'
-
-// mover para um utils
-export function withProviders (
-  initialElement: ReactNode,
-  providers: Array<FC<ChildrenProps>>
-) {
-  return providers.reduce(
-    (children, Provider) => <Provider>{children}</Provider>,
-    initialElement
-  )
-}
+import BotApiContextProvider from './context/BotApiContext'
 
 function App () {
-  return withProviders(
-    <Router />,
-    providers
+  return (
+    <BotApiContextProvider>
+      <Router />
+    </BotApiContextProvider>
   )
 }
-
-// Novos contextos é só adicionar a lista
-const providers = [BotApiContextProvider]
 
 export default App
