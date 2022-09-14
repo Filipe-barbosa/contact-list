@@ -1,8 +1,9 @@
 import Card from '../Card'
+import HorizontalCard from '../HorizontalCard'
 import { useBotApiContext } from '../../context/BotApiContext'
 
 function Favorites () {
-  const { favoriteBots, setIsFavorite } = useBotApiContext()
+  const { favoriteBots, setIsFavorite, menuHidden } = useBotApiContext()
   return (
     <>
       <div className="flex items-baseline justify-between" >
@@ -10,14 +11,31 @@ function Favorites () {
         Favorites
         </div>
       </div>
-      <div className="flex gap-4 items-center border-t ">
-        {favoriteBots.map((bot, i) => (
-          <Card
-            key={bot.name}
-            bot={bot}
-            setFavorite={() => setIsFavorite(bot.name)}
-          />
-        ))}
+      <div>
+        {menuHidden
+          ? (
+            <div className="flex gap-4 items-center border-t ">
+              {favoriteBots.map((bot, i) => (
+                <Card
+                  key={bot.name}
+                  bot={bot}
+                  setFavorite={() => setIsFavorite(bot.name)}
+                />
+              ))}
+            </div>)
+
+          : (
+            <div className="grid border-t gap-2">
+              {favoriteBots.map((bot, i) => (
+                <HorizontalCard
+                  key={bot.name}
+                  bot={bot}
+                  setFavorite={() => setIsFavorite(bot.name)}
+                />
+              ))}
+            </div>)
+
+        }
       </div>
 
     </>

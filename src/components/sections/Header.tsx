@@ -4,7 +4,7 @@ import Button from '../Button'
 import { useBotApiContext } from '../../context/BotApiContext'
 
 export default function Header () {
-  const { orderBotsBy, search } = useBotApiContext()
+  const { orderBotsBy, search, menuHidden, selectMenuHidden } = useBotApiContext()
   return (
     <div className="flex items-baseline justify-between">
       <div className="font-bold text-2xl  text-colorTitle">
@@ -14,10 +14,10 @@ export default function Header () {
         <input onChange={(e) => search(e.target.value) } placeholder="Search" className="border rounded-lg p-2 w-80"/>
         <Button label='Order by name' click={() => orderBotsBy('name')}/>
         <Button label='Order by create' click={() => orderBotsBy('create')}/>
-        <button>
+        <button disabled={menuHidden} onClick={() => selectMenuHidden(menuHidden)}>
           <MenuIcon/>
         </button>
-        <button>
+        <button disabled={!menuHidden} onClick={() => selectMenuHidden(menuHidden)}>
           <MenuIconList/>
         </button>
       </div>

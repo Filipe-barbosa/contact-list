@@ -6,6 +6,7 @@ import Button from '../Button'
 import SendMessageIcon from '../../icons/SendMessageIcon'
 import ReceivedMessageIcon from '../../icons/ReceivedMessageIcon'
 import ProfileIcon from '../../icons/ProfileIcon'
+import Divider from '../Divider'
 
 export default function Details () {
   const { shortName = '' } = useParams()
@@ -26,7 +27,7 @@ const DetailsContent = () => {
   }
 
   return (
-    <div>
+    <>
       <HeaderDetails bot={bot} />
       <div className='grid grid-cols-4 gap-4 py-4'>
         <div className='rounded-lg shadow-md bg-white border-gray-200 p-8'>
@@ -76,11 +77,14 @@ const DetailsContent = () => {
           </div>
         </div>
       </div>
-      <footer className='text-xs text-footerColor py-4 flex justify-center border-t-4 border-dividerColor'>
-        <div>
+      <div>
+        <Divider/>
+        <footer className='text-xs text-footerColor py-4 flex justify-center' >
+          <div>
           &copy; 2022, BLiP Todos os direitos reservados|Termos de Uso
-        </div>
-      </footer>
-    </div>
+          </div>
+        </footer>
+      </div>
+    </>
   )
 }

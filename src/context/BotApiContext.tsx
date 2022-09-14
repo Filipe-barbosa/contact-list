@@ -7,8 +7,10 @@ interface IAPIContext {
   nonFavoriteBots: Bot[]
   favoriteBots: Bot[]
   isLoading: boolean
+  menuHidden: boolean
   setIsFavorite: (name: string) => void
   search: (text: string) => void
+  selectMenuHidden: (menu: boolean) => void
   orderBotsBy: (order: OrderBy) => void
 }
 
@@ -35,8 +37,10 @@ const BotApiContext = createContext<IAPIContext>({
   nonFavoriteBots: [],
   favoriteBots: getStoredFavorites(),
   isLoading: false,
+  menuHidden: false,
   setIsFavorite: () => {},
   search: () => {},
+  selectMenuHidden: () => {},
   orderBotsBy: () => {}
 })
 
@@ -52,7 +56,7 @@ function BotApiContextProvider ({ children }: ChildrenProps) {
   const [searchText, setSearchText] = useState<string>('')
   const [favoriteBots, setFavoriteBots] = useState<Bot[]>(getStoredFavorites)
   const [isLoading, setIsLoading] = useState(true)
-
+  const [menuHidden, setMenuHidden] = useState(true)
   // Salva lista de favoritos e atualiza estado
   const updateFavBots = (newBots: Bot[], text: string) => {
     const favBots = newBots.filter(b => b.isFavorite && b.name.includes(text))
@@ -96,9 +100,11 @@ function BotApiContextProvider ({ children }: ChildrenProps) {
           nonFavoriteBots: bots.filter(b => !b.isFavorite && b.name.includes(searchText)),
           favoriteBots,
           isLoading,
+          menuHidden,
           setIsFavorite,
           orderBotsBy: (order: OrderBy) => setOrderBy(order),
-          search: (text: string) => setSearchText(text)
+          search: (text: string) => setSearchText(text),
+          selectMenuHidden: (menuHidden: boolean) => setMenuHidden(!menuHidden)
         }
       }
     >
