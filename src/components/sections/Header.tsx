@@ -14,10 +14,10 @@ export default function Header () {
         <input onChange={(e) => search(e.target.value) } placeholder="Search" className="border rounded-lg p-2 w-80"/>
         <Button label='Order by name' click={() => orderBotsBy('name')}/>
         <Button label='Order by create' click={() => orderBotsBy('create')}/>
-        <button disabled={menuHidden} onClick={() => selectMenuHidden(menuHidden)}>
+        <button disabled={menuHidden} onClick={() => selectMenuHidden(false)}>
           <MenuIcon/>
         </button>
-        <button disabled={!menuHidden} onClick={() => selectMenuHidden(menuHidden)}>
+        <button disabled={!menuHidden} onClick={() => selectMenuHidden(true)}>
           <MenuIconList/>
         </button>
       </div>
