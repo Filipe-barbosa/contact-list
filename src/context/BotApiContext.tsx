@@ -96,12 +96,12 @@ function BotApiContextProvider ({ children }: ChildrenProps) {
     <BotApiContext.Provider
       value={
         {
+          isLoading,
+          setIsFavorite,
+          menuHidden,
+          favoriteBots,
           botList: bots,
           nonFavoriteBots: bots.filter(b => !b.isFavorite && b.name.includes(searchText)),
-          favoriteBots,
-          isLoading,
-          menuHidden,
-          setIsFavorite,
           orderBotsBy: (order: OrderBy) => setOrderBy(order),
           search: (text: string) => setSearchText(text),
           selectMenuHidden: (menuHidden: boolean) => setMenuHidden(!menuHidden)
